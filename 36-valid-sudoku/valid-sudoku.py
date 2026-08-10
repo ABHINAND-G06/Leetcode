@@ -9,11 +9,7 @@ class Solution:
                 cell=board[i][j]
                 if cell=='.':
                     continue
-                if cell in rowmap[i]:
-                    return False
-                if cell in colmap[j]:
-                    return False
-                if cell in blockmap[(i//3,j//3)]:
+                if (cell in rowmap[i]) or (cell in colmap[j]) or (cell in blockmap[(i//3,j//3)]) :
                     return False
                 colmap[j].add(cell)
                 rowmap[i].add(cell)
